@@ -1,0 +1,44 @@
+body{font-family:"楷体";color:#000;}
+.myinput{margin-top:10px;}
+.top{width:100%;}
+.mystyle{border-radius:20px;height:50px;}
+.top span{float:left;color:transparent;font-size:35px;line-height:45px;background:-webkit-linear-gradient(left,orange,yellow,green,cyan,blue,purple);-webkit-background-clip:text;font-weight:bold}
+.top ul{margin-left:20px;float:left}
+.top ul li{float:left;line-height:50px;margin-right:5px;}
+.top ul li a{color:#fff;font-size:14px;font-weight:bold}
+.top ol{float:right}
+.top ol li{float:left;line-height:50px;margin-left:10px;color:#fff;}
+.top ol li a{color:#fff;font-size:17px;}
+.mycontainer{height:120px;}
+.logo{height:110px;margin-top:5px;}
+.myFont{font-size:17px;}
+.myFont1{font-size:20px}
+.myFontB{font-size:30px}
+.myFontH{line-height:50px;}
+.myBg{height:30px;border-bottom:1px solid #ccc;line-height:30px;}
+.order-two{margin-left:10px;}
+.order{height:50px;margin-top:30px;}
+.search{margin-top:50px;}
+.search input[type="text"]{width:300px;height:40px;}
+.search button{width:80px;height:40px;background:#1296DB;color:#fff;font-size:17px;}
+.navBg{background:#1296DB;height:50px;}
+.navBg span{float:left;line-height:50px;margin-right:10px}
+.navBg span a{color:#fff;font-size:20px;}
+.fontColor{colo:#fff}
+#fontColor{color:#fff;}
+.navBg ul{float:left}
+.navBg ul li{float:left;padding:10px 20px}
+.navBg ul li a{color:#fff;font-size:20px;}
+.navBg ul li:hover{background:#056C90}
+.navBg ul li a:hover{text-decoration: none;}
+.quake-nav-wrapper{top:-70px}
+.wrapper{margin-left:50px}
+.clearFloat{margin-top:20px;}
+.myborder{border:1px solid #ccc;margin-top:30px;}
+.myborder>span{float:left;margin:15px 0px 20px 0px;}
+.myborder>a{float:right;margin:10px 0px 20px 0px;}
+.mylist>li{float:left;margin-left:35px;margin-top:5px;}
+.mylist>li>a>img{width:120px;}
+.myBottom{background:#056C90;height:200px;width:100%;padding:20px 0px}
+.myinput{margin-top:10px;}
+.fontStyle{color:transparent;font-size:40px;background:-webkit-linear-gradient(left,orange,yellow,green,cyan,blue,purple);-webkit-background-clip:text;font-weight:bold;}
