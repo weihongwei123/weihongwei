@@ -1,0 +1,56 @@
+<%include header%>
+
+<div class="mws-panel grid_8">
+    <div class="mws-panel-header">
+        <span>添加分类</span>
+    </div>
+    <div class="mws-panel-body no-padding">
+        <form class="mws-form" action="/admin/addType/post" method="post" enctype="multipart/form-data">
+            <div class="mws-form-inline">
+                <div class="mws-form-row">
+                    <label class="mws-form-label">类名</label>
+                    <div class="mws-form-item">
+                        <input type="text" class="small" name="name">
+                    </div>
+                </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">封面</label>
+                    <div class="mws-form-item">
+                        <div style="position: relative;" class="small">
+                            <input type="file" name="img" id="file">
+                            <img src="" alt="" id="res"/>
+                        </div>
+                        <label style="display:block" generated="true" class="error" for="picture"></label>
+                    </div>
+                </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">状态</label>
+                    <div class="mws-form-item">
+                        <input type="text" class="small" name="status">
+                    </div>
+                </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">是否显示</label>
+                    <div class="mws-form-item">
+                        <input type="text" class="small" name="visible">
+                    </div>
+                </div>
+            </div>
+            <div class="mws-button-row">
+                <input type="submit" value="提交" class="btn btn-danger">
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    var fileInput = document.getElementById('file');
+    $('#file').change(function(){
+        var myfile = fileInput.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(myfile);
+        reader.onload = function(){
+            $('#res').attr('src',this.result)
+        }
+    })
+</script>
+<%include footer%>

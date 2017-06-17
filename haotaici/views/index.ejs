@@ -1,0 +1,110 @@
+<% include header%>
+
+<!--轮播-->
+  <div class="container">
+    <div class="wrapper">
+
+      <div class="quake-slider">
+        <div class="quake-slider-images">
+          <a target="_blank" href="http://www.egrappler.com/free-premium-website-template-clean-business/">
+            <img src="/images/chuqiaozhuan.jpg" alt="Clean Business Free Business Website Premium Template" />
+          </a><a target="_blank" href="http://www.egrappler.com/free-premium-html-adminbackend-template-for-web-applications-bluewhale-admin/">
+            <img src="/images/sansheng.jpg" alt="Free Premium HTML Admin/Backend Template for Web Applications" /></a>
+          <a target="_blank" href="http://www.egrappler.com/free-html-jquery-portfolio-template-mni-html-vcard/">
+            <img src="/images/31.jpg" alt="Free HTML jQuery Portfolio Template" />
+          </a><a target="_blank" href="http://www.egrappler.com/jquery-clean-and-simple-tooltips-gips/">
+            <img src="/images/xiangsheng.jpg" alt="jQuery Clean and Simple Tooltips Plugin" />
+        </div>
+        <div class="quake-slider-captions">
+          <div class="quake-slider-caption">
+            <span class='quake-highlight'><a target="_blank" href="http://www.egrappler.com/free-premium-website-template-clean-business/">
+                电视剧台词</a></span> 楚乔传</div>
+          <div class="quake-slider-caption">
+            <span class='quake-highlight'><a target="_blank" href="http://www.egrappler.com/free-premium-html-adminbackend-template-for-web-applications-bluewhale-admin/">
+                电影台词</a></span> 三生三世十里桃花</div>
+
+          <div class="quake-slider-caption">
+            <span class='quake-highlight'><a target="_blank" href="http://www.egrappler.com/jquery-plugin-for-on-demand-search-box-seacrhmeme/">
+                小品台词</a></span> 开心麻花小品台词集</div>
+          <div class="quake-slider-caption">
+            <span class='quake-highlight'><a target="_blank" href="http://www.egrappler.com/jquery-credit-card-validation-plugin-smart-validate/">
+                相声台词</a></span>岳云鹏相声台词集</div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!--轮播 end-->
+  <!-- 列表-->
+  <div class="container clearFloat">
+    <% categoryList.forEach(function(val){%>
+    <div class="row">
+      <div class="col-md-3 myborder">
+        <span>今日更新5部</span>
+        <a href="">最新更新&gt;&gt;</a>
+        <table class="table">
+          <%for(var i=1;i<=10;i++){%>
+          <tr>
+            <td><%= i%></td>
+            <td>楚乔传</td>
+            <td class="text-center">6-14</td>
+          </tr>
+          <%}%>
+        </table>
+      </div>
+
+      <div class="col-md-9 myborder">
+        <h2 class="myBg myFont"><%= val.name%></h2>
+        <ul class="mylist">
+          <% articleList.forEach(function(val1){%>
+          <li>
+            <a href="">
+              <img src="/<%=val1.img%>" alt=""/>
+              <br/>
+              <span><%= val1.title%></span><br/>
+              <span><%= val1.content%></span>
+            </a>
+          </li>
+          <% })%>
+        </ul>
+      </div>
+    </div>
+    <% })%>
+<% include footer%>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.quake-slider').quake({ effects: ['swirlFadeIn', 'swirlFadeOut', 'swirlFadeIn', 'linearPealReverse', 'slideIn', 'swirlFadeIn', 'explodeFancy'],
+      thumbnails: false,
+      captionOpacity: '0.3',
+      captionsSetup: [
+        {
+          "orientation": "bottom",
+          "slides": [0, 1],
+          "callback": captionAnimateCallback
+        },
+        {
+          "orientation": "top",
+          "slides": [2, 3],
+          "callback": captionAnimateCallback
+        }
+        ,
+        {
+          "orientation": "left",
+          "slides": [4, 5],
+          "callback": captionAnimationCallback1
+        }
+
+      ]
+
+    });
+
+    function captionAnimateCallback(captionWrapper, captionContainer, orientation) {
+      captionWrapper.css({ left: '-990px' }).stop(true, true).animate({ left: 0 }, 500);
+      captionContainer.css({ left: '-990px' }).stop(true, true).animate({ left: 0 }, 500);
+    }
+    function captionAnimationCallback1(captionWrapper, captionContainer, orientation) {
+      captionWrapper.css({ top: '-330px' }).stop(true, true).animate({ top: 0 }, 500);
+      captionContainer.css({ top: '-330px' }).stop(true, true).animate({ top: 0 }, 500);
+    }
+
+  });
+</script>

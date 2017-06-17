@@ -1,0 +1,87 @@
+<%include header%>
+<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="/ueditor/ueditor.all.min.js"></script>
+<div class="mws-panel grid_8">
+    <div class="mws-panel-header">
+        <span>修改文章</span>
+    </div>
+    <div class="mws-panel-body no-padding">
+        <form class="mws-form" action="/admin/updateArticle" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="_id" value="<%= articleData._id%>">
+            <div class="mws-form-inline">
+                <div class="mws-form-row">
+                    <label class="mws-form-label">封面</label>
+                    <div class="mws-form-item">
+                        <div style="position: relative;" class="small">
+                            <input type="file" name="img" id="file">
+                            <img src="/<%= articleData.img%>" alt="" id="prevImg"/>
+                            <img src="" alt="" id="nowImg"/>
+                        </div>
+                        <label style="display:block" generated="true" class="error" for="picture"></label>
+                    </div>
+                </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">类名</label>
+                    <div class="mws-form-item">
+                        <select name="catId" class="small" id="">
+                            <% datalist.forEach(function(val){%>
+                            <option <%= val._id==articleData.catId?'selected':'' %> value="<%=val._id%>"><%= val.name%></option>
+                            <% })%>
+                        </select>
+                    </div>
+                </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">文章名</label>
+                    <div class="mws-form-item">
+                        <input type="text" class="small" name="title" value="<%= articleData.title%>">
+                    </div>
+                </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">作者</label>
+                    <div class="mws-form-item">
+                        <input type="text" class="small" name="author" value="<%= articleData.author%>">
+                    </div>
+                </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">内容</label>
+                    <div class="mws-form-item">
+                        <textarea id="mycontent" name="content"  class="small"><%= articleData.content%></textarea>
+                    </div>
+                </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">热门</label>
+                    <div class="mws-form-item">
+                        <input type="radio" name="hot" value="1" <%= articleData.hot==1?'checked':''%>>是
+                        <input type="radio" name="hot" value="0" <%= articleData.hot==0?'checked':''%>>否
+                    </div>
+                </div>
+                <div class="mws-form-row">
+                    <label class="mws-form-label">加精</label>
+                    <div class="mws-form-item">
+                        <input type="radio" name="best" value="1" <%= articleData.best==1?'checked':''%>>是
+                        <input type="radio" name="best" value="0" <%= articleData.best==0?'checked':''%>>否
+                    </div>
+                </div>
+            </div>
+            <div class="mws-button-row">
+                <input type="submit" value="提交" class="btn btn-danger">
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<script>
+    var ue = UE.getEditor('mycontent');
+    var fileInput = document.getElementById('file');
+    $('#file').change(function(){
+        $('#prevImg').hide();
+        var myfile = fileInput.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(myfile);
+        reader.onload = function(){
+            $('#nowImg').attr('src',this.result)
+        }
+    })
+</script>
+<%include footer%>

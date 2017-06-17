@@ -1,0 +1,77 @@
+<%include header%>
+<div class="mws-panel grid_8">
+    <div class="mws-panel-header">
+        <span><i class="icon-table"></i>文章列表</span>
+    </div>
+    <div class="mws-panel-body no-padding">
+        <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid"><div id="DataTables_Table_1_length" class="dataTables_length"><label>显示 <select size="1" name="DataTables_Table_1_length" aria-controls="DataTables_Table_1"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> 条</label></div><div class="dataTables_filter" id="DataTables_Table_1_filter"><label>搜索: <input type="text" aria-controls="DataTables_Table_1"></label></div><table class="mws-datatable-fn mws-table dataTable" id="DataTables_Table_1" aria-describedby="DataTables_Table_1_info">
+                <thead>
+                <tr role="row">
+                    <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 101px;">类名</th>
+                    <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 101px;">封面</th>
+                    <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 101px;">标题</th>
+                    <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 101px;">作者</th>
+                    <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 101px;">热门</th>
+                    <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 101px;">加精</th>
+                    <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 101px;">加精</th>
+                    <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 208px;">操作</th>
+                </tr>
+                </thead>
+
+                <tbody role="alert" aria-live="polite" aria-relevant="all">
+                <% articlelist.forEach(function(val){%>
+                <tr>
+                    <td class=" "><%= val.catId.name%></td>
+                    <td class="  sorting_1">
+                        <img src="/<%= val.img%>" alt=""/>
+                    </td>
+                    <td class=" "><%= val.title%></td>
+                    <td class=" "><%= val.author%></td>
+                    <td class=" "><%= val.hot%></td>
+                    <td class=" "><%= val.best%></td>
+                    <td class=" "><%= val.createTime.toLocaleString()%></td>
+                    <td class="" >
+                        <a href="editArticle/<%= val._id%>">编辑</a>&nbsp;|&nbsp;
+                        <a class="delArticle" info="<%= val._id%>">删除</a>
+                    </td>
+                </tr>
+                <% })%>
+                </tbody>
+            </table>
+            <div class="dataTables_info" id="DataTables_Table_1_info">Showing 1 to 10 of 57 entries</div>
+            <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">
+                <a href="/admin/article/?page=1" tabindex="0" class="first paginate_button paginate_button_disabled" id="DataTables_Table_1_first">First</a>
+                <a href="/admin/article/?page=<%=page-1%>" tabindex="0" class="previous paginate_button paginate_button_disabled" id="DataTables_Table_1_previous">Previous</a>
+                <span>
+                    <% for(var i=1;i<=maxPage;i++){%>
+                    <a href="/admin/article/?page=<%= i%>" tabindex="0" class="paginate_active"><%= i%></a>
+                    <% }%>
+                </span>
+                <a href="/admin/article/?page=<%=page+1%>" tabindex="0" class="next paginate_button" id="DataTables_Table_1_next">Next</a>
+                <a href="/admin/article/?page=<%=maxPage%>" tabindex="0" class="last paginate_button" id="DataTables_Table_1_last">Last</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.delArticle').click(function(){
+        if(confirm('确定要删除吗?')){
+            $.ajax({
+                url:'delArticle',
+                type:'post',
+                data:{_id:$(this).attr('info')},
+                success:function(response){
+                    location.href='/admin/article';
+                },
+                error:function(){
+                    alert('no')
+                }
+            })
+        }else{
+            return;
+        }
+    })
+
+</script>
+<%include footer%>

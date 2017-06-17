@@ -1,0 +1,69 @@
+<%include header%>
+<!-- Main Container Start -->
+
+
+        <div class="mws-panel grid_8">
+            <div class="mws-panel-header">
+                <span><i class="icon-table"></i>分类列表</span>
+            </div>
+            <div class="mws-panel-body no-padding">
+                <table class="mws-table">
+                    <thead>
+                    <tr>
+                        <th>类名</th>
+                        <th>封面</th>
+                        <th>是否显示</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td>Other browsers</td>
+                        <td>All others</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>U</td>
+                    </tr>
+                    <% datalist.forEach(function(val){%>
+                    <tr>
+                        <td><%= val.name%></td>
+                        <td>
+                            <img width="80" src="/<%= val.img%>" alt=""/>
+                        </td>
+                        <td><%= val.visible%></td>
+                        <td><%= val.status%></td>
+                        <td>
+                            <a href="editType/<%= val._id%>">编辑</a>&nbsp;|&nbsp;
+                            <a info="<%= val._id%>" class="delType">删除</a>
+                        </td>
+                    </tr>
+                    <% })%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+<script>
+    $('.delType').click(function(){
+        if(confirm('确定要删除吗?')){
+            $.ajax({
+                url:'delType',
+                type:'post',
+                data:{_id:$(this).attr('info')},
+                success:function(response){
+                    location.href='/admin/type';
+                },
+                error:function(){
+                    alert('no')
+                }
+            })
+        }else{
+            return;
+        }
+    })
+
+</script>
+
+    <!-- Inner Container End -->
+    <%include footer%>
