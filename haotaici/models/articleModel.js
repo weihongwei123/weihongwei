@@ -17,7 +17,7 @@ var articleSchema = new mongoose.Schema({
     },
     author:{
         type:String,
-        default:'',
+        default:'佚名',
     },
     img:{
         type:String,

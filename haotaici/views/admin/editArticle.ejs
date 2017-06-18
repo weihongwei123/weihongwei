@@ -26,7 +26,7 @@
                     <div class="mws-form-item">
                         <select name="catId" class="small" id="">
                             <% datalist.forEach(function(val){%>
-                            <option <%= val._id==articleData.catId?'selected':'' %> value="<%=val._id%>"><%= val.name%></option>
+                            <option class="<%=articleData.name%>" <%= val.name==articleData.catId.name?'selected':'' %> value="<%=val._id%>"><%= val.name%></option>
                             <% })%>
                         </select>
                     </div>

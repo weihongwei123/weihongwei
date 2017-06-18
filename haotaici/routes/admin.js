@@ -26,7 +26,7 @@ router.post('/addArticle/post',indexController.addArticleData);
 //删除文章数据
 router.post('/delArticle',indexController.delArticle);
 //修改文章页面
-router.get('/editArticle/:_id',indexController.editArticle)
+router.get('/editArticle/:_id',indexController.editArticle);
 //修改文章数据
 router.post('/updateArticle',indexController.updateArticle);
 module.exports = router;

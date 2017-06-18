@@ -1,0 +1,15 @@
+<% include header%>
+<div class="container" style="margin-bottom:60px;"></div>
+<div class="container" style="margin-bottom:60px;">
+  <div class="row">
+    <div class="col-md-6">
+      <img height="310" src="/<%= articleList.img%>" alt="">
+    </div>
+    <div class="col-md-6">
+      <p class="fontStyle"><%= articleList.title%></p>
+      <p class="myFont1"><%= articleList.author%></p>
+      <div><%=articleList.content.replace(/<[^>]+>/g,"")%></div>
+    </div>
+  </div>
+</div>
+<% include footer%>

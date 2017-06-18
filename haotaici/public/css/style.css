@@ -35,9 +35,10 @@ body{font-family:"楷体";color:#000;}
 .wrapper{margin-left:50px}
 .clearFloat{margin-top:20px;}
 .myborder{border:1px solid #ccc;margin-top:30px;}
-.myborder>span{float:left;margin:10px 0px 20px 0px;}
+.myborder>span{float:left;margin:15px 0px 20px 0px;}
 .myborder>a{float:right;margin:10px 0px 20px 0px;}
 .mylist>li{float:left;margin-left:35px;margin-top:5px;}
 .mylist>li>a>img{width:120px;}
 .myBottom{background:#056C90;height:200px;width:100%;padding:20px 0px}
 .myinput{margin-top:10px;}
+.fontStyle{color:transparent;font-size:40px;background:-webkit-linear-gradient(left,orange,yellow,green,cyan,blue,purple);-webkit-background-clip:text;font-weight:bold;}

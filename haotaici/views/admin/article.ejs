@@ -4,7 +4,12 @@
         <span><i class="icon-table"></i>文章列表</span>
     </div>
     <div class="mws-panel-body no-padding">
-        <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid"><div id="DataTables_Table_1_length" class="dataTables_length"><label>显示 <select size="1" name="DataTables_Table_1_length" aria-controls="DataTables_Table_1"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> 条</label></div><div class="dataTables_filter" id="DataTables_Table_1_filter"><label>搜索: <input type="text" aria-controls="DataTables_Table_1"></label></div><table class="mws-datatable-fn mws-table dataTable" id="DataTables_Table_1" aria-describedby="DataTables_Table_1_info">
+        <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper" role="grid">
+        
+            <div class="dataTables_filter" id="DataTables_Table_1_filter">
+                <label>搜索: <input type="text" aria-controls="DataTables_Table_1"></label>
+            </div>
+            <table class="mws-datatable-fn mws-table dataTable" id="DataTables_Table_1" aria-describedby="DataTables_Table_1_info">
                 <thead>
                 <tr role="row">
                     <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 101px;">类名</th>
@@ -13,7 +18,7 @@
                     <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 101px;">作者</th>
                     <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 101px;">热门</th>
                     <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 101px;">加精</th>
-                    <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 101px;">加精</th>
+                    <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 101px;">创建时间</th>
                     <th role="columnheader" tabindex="0" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 208px;">操作</th>
                 </tr>
                 </thead>
@@ -31,7 +36,7 @@
                     <td class=" "><%= val.best%></td>
                     <td class=" "><%= val.createTime.toLocaleString()%></td>
                     <td class="" >
-                        <a href="editArticle/<%= val._id%>">编辑</a>&nbsp;|&nbsp;
+                        <a href="/admin/editArticle/<%= val._id%>">编辑</a>&nbsp;|&nbsp;
                         <a class="delArticle" info="<%= val._id%>">删除</a>
                     </td>
                 </tr>
@@ -53,12 +58,11 @@
         </div>
     </div>
 </div>
-
 <script>
     $('.delArticle').click(function(){
         if(confirm('确定要删除吗?')){
             $.ajax({
-                url:'delArticle',
+                url:'/admin/delArticle',
                 type:'post',
                 data:{_id:$(this).attr('info')},
                 success:function(response){

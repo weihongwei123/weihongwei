@@ -1,0 +1,47 @@
+<% include header_min%>
+<div class="container">
+    <h1 class="text-center fontStyle">登录</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="inputText3" class="col-sm-3 control-label">用户名</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">密码</label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-10">
+                        <input type="submit" class="btn btn-default" value="登录" id="login">
+                        <a href="/register">没有账号去注册</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<script>
+    $('#login').click(function(){
+        $.ajax({
+            url:'/doLogin',
+            type:'post',
+            data:{username:$('#username').val(),password:$('#password').val()},
+            success:function(response){
+                location.href = '/';
+            },
+            error:function(){
+                location.href = '/login';
+            }
+        })
+    })
+</script>
+<% include footer_min%>

@@ -42,13 +42,17 @@
         <span>今日更新5部</span>
         <a href="">最新更新&gt;&gt;</a>
         <table class="table">
-          <%for(var i=1;i<=10;i++){%>
+          <%var j=0%>
+          <% for(var i=0;i<articleList.length;i++){%>
+          <%if(val.name==articleList[i].catId.name){%>
           <tr>
-            <td><%= i%></td>
-            <td>楚乔传</td>
-            <td class="text-center">6-14</td>
+          <td><%= j+1%></td>
+          <td><%= articleList[i].title%></td>
+          <td class="text-center"><%= articleList[i].createTime.toLocaleDateString()%></td>
           </tr>
-          <%}%>
+          <%j++%>
+            <% }}%>
+
         </table>
       </div>
 
@@ -56,12 +60,12 @@
         <h2 class="myBg myFont"><%= val.name%></h2>
         <ul class="mylist">
           <% articleList.forEach(function(val1){%>
-          <li>
-            <a href="">
-              <img src="/<%=val1.img%>" alt=""/>
+          <li <%=val.name==val1.catId.name?'style="display:block"':'style=display:none'%>>
+            <a href="/detail/<%= val1._id%>">
+              <img src="/<%=val1.img%>" alt="" height="70"/>
               <br/>
               <span><%= val1.title%></span><br/>
-              <span><%= val1.content%></span>
+              <span><%= val1.author%></span>
             </a>
           </li>
           <% })%>
@@ -69,6 +73,7 @@
       </div>
     </div>
     <% })%>
+  </div>
 <% include footer%>
 <script type="text/javascript">
   $(document).ready(function () {

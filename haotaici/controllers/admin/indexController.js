@@ -112,7 +112,7 @@ indexController.addArticleData = function(req,res,next){
 }
 //文章列表
 indexController.article = function(req,res,next){
-    var pageSize = 3;
+    var pageSize = 5;
     var page = req.query.page?req.query.page:1;
     articleModel.find().count(function(err,total){
         if(err){
@@ -144,7 +144,7 @@ indexController.delArticle = function(req,res,next){
 }
 //修改文章页面
 indexController.editArticle = function(req,res,next){
-    articleModel.findOne(req.params,function(err,data){
+    articleModel.findOne(req.params).populate('catId',{name:1}).exec(function(err,data){
         console.log(req.params)
         if(err){
             console.log(err)
