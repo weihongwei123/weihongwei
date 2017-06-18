@@ -7,6 +7,8 @@ var categoryModel = require('../models/categoryModel');
 var articleModel = require('../models/articleModel');
 var userModel = require('../models/userModel');
 
+
+
 var homeController = {};
 
 //首页页面
