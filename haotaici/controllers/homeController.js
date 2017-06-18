@@ -8,6 +8,7 @@ var articleModel = require('../models/articleModel');
 var userModel = require('../models/userModel');
 
 var homeController = {};
+
 //首页页面
 homeController.index = function(req,res,next){
    if(!req.session.user) res.redirect('/login')
