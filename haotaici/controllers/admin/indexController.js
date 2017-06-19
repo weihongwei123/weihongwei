@@ -3,10 +3,13 @@
  */
 var categoryModel = require('../../models/categoryModel');
 var articleModel = require('../../models/articleModel');
-var imgUpload = require('../../configs/imgUpload_config')
+var imgUpload = require('../../configs/imgUpload_config');
+var userModel = require('../../models/userModel')
 var indexController = {};
 indexController.index = function(req,res,next){
+    // if(!req.session.user) res.redirect('/admin/login')
     res.render('admin/index');
+
 }
 indexController.type = function(req,res,next){
     categoryModel.find(function(err,data){
@@ -182,5 +185,52 @@ indexController.updateArticle = function(req,res,next){
             }
         })
     });
+}
+//注册页面
+indexController.register = function(req,res,next){
+    res.render('admin/register')
+}
+//注册
+indexController.doRegister = function(req,res,next){
+    var username = req.body.username.trim();
+    var password = req.body.password.trim();
+    var power = req.body.power.trim();
+    var crypto = require('crypto');
+    var md5 = crypto.createHash('md5')
+    md5.update(password);
+    var md5Password = md5.digest('hex');
+    userModel.create({username:username,password:md5Password,power:power},function(err){
+        if(err){
+            res.send('no')
+        }else{
+            res.send('ok')
+        }
+    })
+}
+//登录页面
+indexController.login = function(req,res,next){
+    res.render('admin/login')
+}
+//登录
+indexController.doLogin = function(req,res,next){
+    var username = req.body.username.trim();
+    var password = req.body.password.trim();
+    var crypto = require('crypto');
+    var md5 = crypto.createHash('md5')
+    md5.update(password);
+    var md5Password = md5.digest('hex');
+    userModel.findOne({username:username,password:md5Password},function(err,data){
+        if(err){
+            res.send('no')
+        }else{
+            req.session.user = data;
+            res.send(data)
+        }
+    })
+}
+//退出登录
+indexController.loginOut = function(req,res,next){
+    req.session.user = null;
+    res.redirect('/admin/login')
 }
 module.exports = indexController;

@@ -21,7 +21,7 @@
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-10">
                         <input type="submit" class="btn btn-default" value="登录" id="login">
-                        <a href="/register">没有账号去注册</a>
+                        <a href="/admin/register">没有账号去注册</a>
                     </div>
                 </div>
             </form>
@@ -32,14 +32,18 @@
 <script>
     $('#login').click(function(){
         $.ajax({
-            url:'/doLogin',
+            url:'/admin/doLogin',
             type:'post',
             data:{username:$('#username').val(),password:$('#password').val()},
             success:function(response){
-                location.href = '/';
+                if(response.power==1){
+                    location.href='/admin';
+                }else{
+                    location.href = '/';
+                }
             },
             error:function(){
-                location.href = '/login';
+                location.href = '/admin/login';
             }
         })
     })

@@ -41,4 +41,6 @@ body{font-family:"楷体";color:#000;}
 .mylist>li>a>img{width:120px;}
 .myBottom{background:#056C90;height:200px;width:100%;padding:20px 0px}
 .myinput{margin-top:10px;}
+.sRow{line-height:300px;font-size:150px;color:transparent;background:-webkit-linear-gradient(left,orange,yellow,green,cyan,blue,purple);-webkit-background-clip:text;font-weight:bold;}
+.sTitle{height:200px;line-height:200px;font-size:120px;color:transparent;background:-webkit-linear-gradient(left,orange,yellow,green,cyan,blue,purple);-webkit-background-clip:text;font-weight:bold;}
 .fontStyle{color:transparent;font-size:40px;background:-webkit-linear-gradient(left,orange,yellow,green,cyan,blue,purple);-webkit-background-clip:text;font-weight:bold;}
