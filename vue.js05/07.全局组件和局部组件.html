@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{list-style: none}
+		ul li{float: left;margin-left: 10px;}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>{{message}}</h1>
+		<br>
+		<my-component></my-component>
+
+	</div>
+	<div style="height:100px;"></div>
+	<div id="container1">
+		<my-component></my-component>
+		<br>
+		<h1>{{message}}</h1>
+
+		<jubu></jubu>
+		
+	</div>
+	
+
+	<script src="../lib/vue.min.js"></script>	
+	<script type="text/javascript">
+
+		// 全局的组件
+		Vue.component('my-component',{
+			template:'<ul><li><a>首页</a></li><li><a>大陆</a></li><li><a>欧美</a></li><li><a>日韩</a></li><li><a>动漫</a></li><li><a>bt</a></li></ul>',
+			// template: '<div>A custom component!</div>'
+		});
+
+		new Vue({
+			// 控制绑定容器
+			el: '#container',
+			// 绑定的数据
+			data:{
+				message:'ok',
+			}	
+		});
+
+
+		new Vue({
+			// 控制绑定容器
+			el: '#container1',
+			// 定义局部组建
+			components:{
+				jubu:{
+					template:"<h2>局部组件</h2>",
+				},
+			},
+			// 绑定的数据
+			data:{
+				message:'buok',
+			}	
+		});
+	</script>
+</body>
+</html>
+

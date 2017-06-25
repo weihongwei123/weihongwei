@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		span{color:red;}
+	</style>
+</head>
+<body>
+	<div id="container">
+		 <my-component></my-component>
+		<h4>{{str}}</h4>
+	</div>
+	<script src="../lib/vue.min.js"></script>	
+	<script type="text/javascript">
+
+		// 全局的组件
+		Vue.component('my-component',{
+			template:"<h1><span>{{str}}</span>是个好日子, <span>{{str1}}</span>的日子 <h1>",
+			data:function(){
+				return {
+					str:'后天',
+					str1:'闷骚',
+				}
+			}
+		});
+		new Vue({
+			// 控制绑定容器
+			el: '#container',
+			// 绑定的数据
+			data:{
+				str:'今天下雨了',
+			}	
+		});
+	</script>
+</body>
+</html>
+

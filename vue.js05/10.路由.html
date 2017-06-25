@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+*{margin: 0;padding: 0;}
+
+footer{width: 100%;position: fixed;bottom:0;}
+footer a{font-size: 25px;padding: 10px 20px;}
+
+</style>
+</head>
+<body>
+	<div id="container">
+		<router-view></router-view>
+		<footer>
+			<router-link to="/">首页</router-link>
+			<router-link to="/guanyu">关于我们</router-link>
+			<router-link to="/jiaru">加入我们</router-link>
+			<router-link to="/dashang">打赏我们</router-link>
+		</footer>
+	</div>
+	<script src="../lib/vue.min.js"></script>	
+	<!-- 加载路由文件 -->
+	<script src="node_modules/vue-router/dist/vue-router.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			// 控制绑定容器
+			el: '#container',
+			// 定义路由
+			router:new VueRouter({
+				routes:[
+					{path:'/',component:{template:'<h2>首页</h2>'}},
+					{path:'/guanyu',component:{template:'<h2>关于我们</h2>'}},
+					{path:'/jiaru',component:{template:'<h2>加入我们</h2>'}},
+					{path:'/dashang',component:{template:'<h2>打赏我们</h2>'}},
+				]
+			}),
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+		
+
+</body>
+</html>

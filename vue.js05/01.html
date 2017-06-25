@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+		.bounce-enter-active {
+		  animation: donghua 2s;
+		}	
+
+
+		.bounce-leave-active {
+		  animation: donghua 5s;
+		}
+		
+		.box{width:200px;height: 200px;background: yellow;}
+
+		@keyframes donghua{
+			0%{
+				background: yellow;
+			}
+			50%{
+				background: green;
+			}
+			100%{
+				background: red;
+			}
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="container">
+
+
+
+	<div id="container">
+	  <button @click="show = !show">Toggle show</button>
+	  <transition name="bounce">
+	    <p v-if="show" class="box">Look at me!</p>
+	  </transition>
+	</div>
+
+
+	</div>
+	<script src="../lib/vue.min.js"></script>	
+	<script type="text/javascript">
+
+		new Vue({
+			// 控制绑定容器
+			el: '#container',
+			// 绑定的数据
+			data:{
+				show: true,
+			}	
+		});
+	</script>
+</body>
+</html>

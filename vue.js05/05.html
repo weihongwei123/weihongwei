@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		
+	<button>get请求</button>	
+	<button>get请求-传递参数-url</button>	
+	<button>get请求-传递参数-obj</button>	
+	<button>post请求</button>	
+
+
+
+	<script src="node_modules/axios/dist/axios.min.js"></script>	
+	<script type="text/javascript">
+
+		var btn = document.getElementsByTagName('button');
+
+		// 点击
+		btn[0].onclick = function(){
+			// Make a request for a user with a given ID 
+			axios.get('test.php').then(function (response) {
+				console.log(response);
+			}).catch(function (error) {
+				console.log(error);
+			});				
+		}
+
+		// get 传递参数
+		btn[1].onclick = function(){
+			axios.get('test1.php?num=2').then(function (response) {
+				console.log(response);
+			}).catch(function (error) {
+				console.log(error);
+			});	
+		}
+
+		// get 传递参数
+		btn[2].onclick = function(){
+			axios.get('test2.php',{params:{username:'jack',age:28}}).then(function (response) {
+				console.log(response);
+			}).catch(function (error) {
+				console.log(error);
+			});	
+		}
+
+		// 点击
+		btn[3].onclick = function(){
+			// Make a request for a user with a given ID 
+			axios.post('test.php').then(function (response) {
+				console.log(response);
+			}).catch(function (error) {
+				console.log(error);
+			});				
+		}
+
+
+	</script>
+
+
+
+</body>
+</html>

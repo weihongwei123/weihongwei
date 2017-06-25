@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+*{margin: 0;padding: 0;}
+ul,ol{list-style: none;}
+span{color:red;}
+#mynav{width: 100%;background: #CCC;}
+#mynav ul{margin: 0 auto;}
+#mynav li{float: left;background: #09c;margin-left: 5px;}
+#mynav li a{color:#FFF;text-decoration: none;font-size: 20px;padding:10px 30px;display: block;}
+</style>
+</head>
+<body>
+	<div id="container">
+		 <my-component></my-component>
+	
+		<div style="height: 100px"></div>
+
+		 <haozujian></haozujian>
+	</div>
+
+
+	<!-- 组件模版  -->
+	<template id="nav">
+		<!-- 只能父级标签 -->
+		<div id="mynav">
+			<ul>
+				<li><a href="">首页</a></li>			
+				<li><a href="">亚洲</a></li>			
+				<li><a href="">欧美</a></li>			
+				<li><a href="">无码</a></li>			
+				<li><a href="">在线</a></li>			
+				<li><a href="">迅雷</a></li>			
+				<li><a href="">电驴</a></li>			
+			</ul>	
+		</div>		
+	</template>
+	
+
+	<script src="../lib/vue.min.js"></script>	
+	<script type="text/javascript">
+
+		// 全局的组件
+		Vue.component('my-component',{
+			template:"#nav"
+		});
+
+
+		// 全局的组件
+		Vue.component('haozujian',{
+			template:"#nav"
+		});
+
+		new Vue({
+			// 控制绑定容器
+			el: '#container',
+			// 绑定的数据
+			data:{
+				str:'今天下雨了',
+			}	
+		});
+	</script>
+</body>
+</html>
+
