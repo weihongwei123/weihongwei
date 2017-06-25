@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/css/animate.css/animate.css">
+    <script src="../lib/js/vue-2.3.3.js"></script>
+    <style>
+        h1{width:200px;border:1px solid green}
+        .box{width:100px;height:100px;border-radius:50%;background:purple;display:inline-block}
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1 class="animated swing">hello world</h1>
+    <h1 class="animated infinite swing">heiheihei</h1>
+    <span class="box animated infinite bounce"></span>
+    <span class="box animated infinite flash"></span>
+    <span class="box animated infinite pulse"></span>
+    <span class="box animated infinite rubberBand"></span>
+    <span class="box animated infinite shake"></span>
+    <span class="box animated infinite tada"></span>
+    <span class="box animated infinite wobble"></span>
+    <span class="box animated infinite jello"></span>
+    <span class="box animated infinite bounceIn"></span>
+</div>
+<script>
+    new Vue({
+        el:'#container',
+    })
+</script>
+</body>
+</html>

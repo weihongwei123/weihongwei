@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/js/vue-2.3.3.js"></script>
+    <style>
+        ul{list-style:none}
+        ul li{float:left;padding:0px 10px;}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <my-component></my-component>
+        <br>
+        <my-component></my-component>
+    </div>
+    <script>
+        Vue.component('my-component',{
+            template:'<ul><li><a href="">首页</a></li><li><a href="">电视剧</a></li><li><a href="">电影</a></li><li><a href="">动漫</a></li></ul>'
+        })
+        new Vue({
+            el:'#container',
+        })
+    </script>
+</body>
+</html>

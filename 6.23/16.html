@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/js/vue-2.3.3.js"></script>
+    <style>
+        span{color:orange}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <my-component></my-component>
+    </div>
+    <script>
+        Vue.component('my-component',{
+            template:'<h1><span>{{str}}</span>每天都要保持好心情<span>{{str1}}</span></h1>',
+            data:function(){
+                return {
+                    str:'嘿嘿',
+                    str1:'哈哈',
+                }
+            }
+        })
+        new Vue({
+            el:'#container',
+        })
+    </script>
+</body>
+</html>

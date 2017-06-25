@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/vue-2.3.3.js"></script>
+    <style>
+        .box{width:200px;height:200px;background:greenyellow;}
+        .bounce-enter-active{animation:donghua 2s}
+        .bounce-leave-active{animation:donghua2 2s}
+        @keyframes donghua {
+            0%{background:greenyellow}
+            50%{background:yellow}
+            100%{background:orange}
+        }
+        @keyframes donghua2 {
+            0%{background:orange}
+            50%{background:yellow}
+            100%{background:greenyellow}
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button @click="show=true">show</button>
+        <button @click="show=false">hide</button>
+        <transition name="bounce">
+            <div v-if="show" class="box"></div>
+        </transition>
+    </div>
+    <script>
+        new Vue({
+            el:'#container',
+            data:{
+                show:true,
+            }
+        })
+    </script>
+</body>
+</html>

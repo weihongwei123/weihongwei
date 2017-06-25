@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0px;padding:0px;list-style:none;}
+        body{background:#6f0b02}
+        #box{width:900px;height:460px;margin:100px auto;position:relative;background:#6f0b02;}
+        .box1{background:url('./images/j1.png') no-repeat right 0;width:48px;height:460px;position:absolute;left:400px;top:1px;z-index:2}
+        .box2{background:url('./images/j2.png') right 0 no-repeat;width:25px;height:460px;position:absolute;left:430px;top:-3px;z-index:1;}
+        .box3{background:url('./images/j3.png') 0 0 no-repeat;width:25px;height:460px;position:absolute;right:430px;top:-4px;z-index:1;}
+        .box4{background:url('./images/j4.png') no-repeat left 0;width:48px;height:460px;position:absolute;right:400px;top:0px;z-index:2;}
+        .box5{position:absolute;top:100px;z-index:10;left:200px;color:#2e2e2e;width:530px;display:none;}
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5">
+            <p class="intro-text">
+                传统音乐是在以典河流域为中心的中原音乐和四域音乐以及外国音乐的交流融合之中形成发展起来的。
+            </p>
+        </div>
+    </div>
+    <script src="jquery-1.11.3.js"></script>
+    <script>
+        $(document).ready(function(){
+            //卷轴展开动画效果
+            $(".box1").animate({'left':'125px','top':'-4px'},1350);
+            $(".box4").animate({'right':'-23px','top':'-5px'},1450);
+            $(".box2").animate({'width':'433px','left':'93px'},1500);
+            $(".box3").animate({'width':'433px','right':'-38px'},1500,function(){
+                $('.box5').fadeIn(800);
+            });
+
+        });
+
+    </script>
+</body>
+</html>

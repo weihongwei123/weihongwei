@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/css/animate.css/animate.css">
+    <script src="../lib/js/vue-2.3.3.js"></script>
+    <style>
+        .box{width:100px;height:100px;background:mediumpurple;border-radius:50%}
+        h1{width:200px}
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box animated infinite fadeOut"></div>
+        <h1 :class="style">hello world</h1>
+    </div>
+    <script>
+        new Vue({
+            el:'#container',
+            data:{
+                style:'animated flip'
+            }
+        })
+    </script>
+</body>
+</html>
