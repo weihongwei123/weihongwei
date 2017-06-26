@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+*{margin: 0;padding: 0;}
+
+footer{width: 100%;position: fixed;bottom:0;}
+footer a{font-size: 25px;padding: 10px 20px;}
+
+</style>
+</head>
+<body>
+	<div id="container">
+		<router-view></router-view>
+		<footer>
+			<router-link to="/">首页</router-link>
+			<router-link to="/cat">商品分类</router-link>
+			<router-link to="/jiaru">加入我们</router-link>
+		</footer>
+	</div>
+	<script src="../lib/vue.min.js"></script>	
+	<!-- 加载路由文件 -->
+	<script src="node_modules/vue-router/dist/vue-router.min.js"></script>
+	<script type="text/javascript">
+		new Vue({
+			// 控制绑定容器
+			el: '#container',
+			// 定义路由
+			router:new VueRouter({
+				routes:[
+					{path:'/',component:{template:'<h2>首页</h2>'}},
+
+					{
+						path:'/cat',
+						component:{
+							template:'<div><router-link to="/cat/tushu">图书</router-link><router-link to="/cat/shuiguo">水果</router-link><router-link to="/cat/yifu">衣服</router-link><router-view></router-view></div>'
+						},
+						// 二级路由
+						children:[{
+							path:'tushu',
+							component:{
+								template:"<h4>这是图书的页面</h4>",
+							},
+						},
+						{
+							path:'shuiguo',
+							component:{
+								template:"<h4>这是水果的页面</h4>",
+							},
+						},				
+						{
+							path:'yifu',
+							component:{
+								template:"<h4>这是衣服的页面</h4>",
+							},
+						},
+
+						]
+
+					},
+					{path:'/jiaru',component:{template:'<h2>加入我们</h2>'}},
+				]
+			}),
+		});
+	</script>
+</body>
+</html>
+

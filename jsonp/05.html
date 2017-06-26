@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Documeotyt</title>
+<style type="text/css">	
+	div{width: 400px;height: 100px;float: left;}
+	#box1{border:5px solid green;}
+	#box2{border:5px solid yellow;}
+</style>
+</head>
+<body>
+<button onclick="request('box1')">获取信放在绿色的盒子里</button>
+<button onclick="request('box2')">获取信放在黄色的盒子里</button>
+<hr>
+<div id="box1"></div>
+<div id="box2"></div>
+
+<script type="text/javascript">
+
+	function box1(data){
+		document.getElementById('box1').innerHTML = '姓名：'+data.name+'-'+data.age+'-'+data.sex;
+	}
+
+	function box2(data){
+		document.getElementById('box2').innerHTML = '姓名：'+data.name+'-'+data.age+'-'+data.sex;
+	}
+
+
+	
+	function request(str){
+		// 创建 script 对象
+		var script = document.createElement('script');	
+
+		script.src = 'http://localhost/H5_26/jsonp/05.php?callback='+str;
+
+		document.body.appendChild(script);
+	}	
+
+</script>	
+</body>
+</html>

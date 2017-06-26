@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button onclick="request()">请求</button>
+	<!-- <script src="http://localhost/H5_26/jsonp/02.js"></script>	 -->
+
+
+	<script type="text/javascript">
+		
+		function request(){
+
+			var script = document.createElement('script');	
+			// 可以跨域。
+			// script.src = 'http://localhost/H5_26/jsonp/02.js';
+			// script.src = 'http://localhost/H5_26/jsonp/test';
+			script.src = 'http://localhost/H5_26/jsonp/02.php';
+
+
+			document.body.appendChild(script);
+		}	
+
+	</script>	
+</body>
+</html>
