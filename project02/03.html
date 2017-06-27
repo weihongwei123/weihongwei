@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="laydate/laydate.js"></script>
+	<style type="text/css">
+		ul {list-style: none;}	
+		/*div{border:1px solid green;width: 300px;height: 40px;}*/
+
+	</style>
+</head>
+<body>
+	<ul>
+	 	<li><input type="text" onclick="laydate();"></li>
+		<li><input type="text" onclick="laydate({istime: false, format: 'YYYY/MM/DD'});"></li>
+ 
+		<li><input id="date" type="text" name=""></li>
+
+
+	</ul>		
+
+
+	<script>
+		laydate({
+		  elem: '#date', 
+		  //目标元素。由于laydate.js封装了一个轻量级的选择器引擎，因此elem还允许你传入class、tag但必须按照这种方式 '#id .class'
+		  event: 'focus', //响应事件。如果没有传入event，则按照默认的click
+		  istime: true,
+		  max: '2017-7-31 23:59:59', //最大日期
+
+			choose: function(dates){ //选择好日期的回调
+				// alert('ok')
+			}
+
+		});
+
+		// console.log(laydate.v);
+
+		laydate.skin('yalan');
+
+
+	</script>
+
+
+</body>
+</html>

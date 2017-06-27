@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+*{margin: 0;padding: 0;}
+body{background: #000;color:#FFF;}	
+#wrap{width: 400px;height:200px;border:2px solid green;border-radius: 50%;margin: 100px auto;}
+#wrap .title{text-align: center;line-height: 70px;font-size: 30px;color:green;}
+#wrap .endtime{text-align: center;}
+#wrap .endtime input{text-align: center;background: pink;border:none;height: 30px;width: 240px;font-size: 20px;color:#FFF;}
+#wrap .endtime button{width: 30px;height: 30px;border-radius: 50%;background: pink;}
+#showTime{text-align: center;line-height: 80px;font-size: 22px;}
+#showTime .num{color:red;}
+#showTime .info{color:#09c;}
+</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="title">倒计时</div>	
+		<div class="endtime">
+			<input id="etime" type="text" onclick="laydate({istime:true});">
+			<button onclick="test()">开</button>
+		</div>
+		<div id="showTime"></div>
+	</div>			
+	<script src="laydate/laydate.js"></script>
+	<script type="text/javascript">
+		// 时间差
+
+		function test(){
+			// 当前时间毫秒数
+			var ntime = new Date().getTime();			
+			// 获取结束时间戳
+			var etimestr = document.getElementById('etime').value;
+			// 结束的时间戳
+			var etime = new Date(etimestr).getTime();
+			// 时间差
+			var t = etime - ntime;
+
+			if(etimestr==''){
+				alert('请输入一个结束的时间在开始计时！');
+				return;
+			}
+
+			if(t<0){
+				alert('输入的时间必须在当前时间之后！');
+				return;
+			}
+
+			run();
+			setInterval(run,1000);
+		}
+
+		function run(){
+
+			// 当前时间毫秒数
+			var ntime = new Date().getTime();			
+			// 获取结束时间戳
+			var etimestr = document.getElementById('etime').value;
+			// 结束的时间戳
+			var etime = new Date(etimestr).getTime();
+			// 时间差
+			var t = etime - ntime;
+
+			// 时间单位转换
+			var d = Math.floor(t/1000/60/60/24);
+			var h = Math.floor(t/1000/60/60%24);
+			var i = Math.floor(t/1000/60%60);
+			var s = Math.floor(t/1000%60);	
+
+			var html = '<span class="num">'+d+'</span> <span class="info">天</span> <span class="num">'+h+'</span> <span class="info">时</span> <span class="num">'+i+'</span> <span class="info">分</span> <span class="num">'+s+'</span> <span class="info">秒</span>'
+			document.getElementById('showTime').innerHTML = html;
+		}
+
+	</script>
+ </body>
+</html>

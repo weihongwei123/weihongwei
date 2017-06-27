@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="https://at.alicdn.com/t/font_07s37dq4pvviy66r.css">
+	<style type="text/css">
+		*{margin: 0;padding: 0;}	
+		ul,ol{list-style: none;}
+		ul{max-width: 640px;margin: 0 auto;}
+		ul li{width: 100px;border:1px solid #CCC;float: left;margin: 10px;padding: 10px;}
+		ul li img{width: 100%;}
+		ul li button{display: block;margin: 5px auto;}
+	
+		#cart{font-size: 80px;color:red;position: fixed;bottom: 10px;right:10px;}
+
+		.itemTu{width: 100px;border-radius: 50%;}
+	</style>
+	<script src="../lib/jquery-1.11.1/jquery.min.js"></script>
+  	<script src="jquery.fly.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+
+			// 加入购物车
+			$('button').click(function(e){
+				//	每个产品的图片	
+			  	var src = $(this).prev().attr('src');
+
+		      $('<img class="itemTu" src='+src+'>').fly({
+
+		        start:{
+		          left: e.pageX,  
+		          top: e.pageY-100, 
+		        },
+		        end:{
+
+		          //结束位置（必填）
+		          left: window.innerWidth-65,
+		          //结束位置（必填）
+		          top: window.innerHeight-65,  
+		          width: 0, //结束时高度
+		          height: 0, //结束时高度
+		        },
+		        speed: 1.2, //越大越快，默认1.2
+			  });
+
+			});
+		})
+
+
+		// alert(window.innerWidth);
+
+		co(document.documentElement.clientWidth)
+	</script>
+</head>
+<body>
+	<span id="cart" class="iconfont icon-gouwuche"></span>
+	<ul>
+		<li>
+			<img src="img/1.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/2.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/3.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/4.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/5.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/6.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/1.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/2.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/3.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/4.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/5.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/6.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/1.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/2.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/3.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/4.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/5.jpg">
+			<button>加入购物车</button>
+		</li>
+		<li>
+			<img src="img/6.jpg">
+			<button>加入购物车</button>
+		</li>
+	</ul>
+</body>
+</html>

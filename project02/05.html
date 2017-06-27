@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css"> 
+  
+    #fly{width: 100px;height: 100px;background: yellow;}
+  
+  </style>
+</head>
+<body>
+  
+  <div id="fly"></div>
+
+
+
+  <script src="../lib/jquery-1.11.1/jquery.min.js"></script>
+  <script src="jquery.fly.min.js"></script>
+  <script>
+
+      $('#fly').fly({
+        start:{
+          left: 11,  //开始位置（必填）#fly元素会被设置成position: fixed
+          top: 600,  //开始位置（必填）
+        },
+        end:{
+          left: 500, //结束位置（必填）
+          top: 130,  //结束位置（必填）
+          width: 100, //结束时高度
+          height: 100, //结束时高度
+        },
+        speed: 1.4, //越大越快，默认1.2
+        autoPlay: false,
+        onEnd: function(){
+        } //结束回调
+      });
+
+
+  </script>
+  
+</body>
+</html>
