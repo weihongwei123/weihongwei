@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/css/font/iconfont.css">
+    <script src="../lib/js/jquery-1.11.3.js"></script>
+    <script src="../lib/js/fly-master/jquery.fly.min.js"></script>
+    <style>
+        *{margin:0px;padding:0px;list-style:none}
+        ul{width:80%;margin:0 auto;overflow:hidden;}
+        ul li{float:left;width:14%;text-align:center;border:1px solid #ccc;margin:1%;}
+        ul li img{width:90%;}
+        ul li button{display:block;margin:2% auto;}
+        .iconfont{color:red;font-size:30px;position:fixed;bottom:5%;right:5%;}
+        .flyImg{width:100px;height:100px;}
+    </style>
+</head>
+<body>
+    <span class="iconfont icon-gouwuche1"></span>
+    <ul>
+        <li>
+            <img src="./images/huolongguo.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/liulian.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/lizhi.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/mihoutao.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/huolongguo.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/liulian.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/lizhi.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/mihoutao.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/huolongguo.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/liulian.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/lizhi.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/mihoutao.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/huolongguo.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/liulian.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/lizhi.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/mihoutao.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/huolongguo.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/liulian.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/lizhi.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/mihoutao.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/huolongguo.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/liulian.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/lizhi.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+        <li>
+            <img src="./images/mihoutao.jpg" alt="">
+            <button>添加购物车</button>
+        </li>
+    </ul>
+</body>
+</html>
+<script>
+    $('button').click(function(e){
+        var src = $(this).prev().attr('src');
+
+        $('<img class="flyImg" src='+src+'>').fly({
+            start:{
+                left: e.pageX,  //开始位置（必填）#fly元素会被设置成position: fixed
+                top: e.pageY-100,  //开始位置（必填）
+            },
+            end:{
+                left: window.innerWidth-100, //结束位置（必填）
+                top: window.innerHeight-100,  //结束位置（必填）
+                width:0, //结束时高度
+                height:0, //结束时高度
+            },
+            autoPlay: true, //是否直接运动,默认true
+            speed: 1.1, //越大越快，默认1.2
+            vertex_Rtop:100, //运动轨迹最高点top值，默认20
+    });
+
+    })
+</script>

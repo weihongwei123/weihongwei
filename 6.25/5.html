@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/js/laydate/laydate.js"></script>
+    <style>
+        *{padding:0px;margin:0px;}
+        body{background:#666;}
+        .wrap{width:500px;height:300px;border:5px solid lawngreen;border-radius:50%;margin:150px auto;}
+        .wrap p{text-align:center;font-size:25px;color:#fff;line-height:100px;}
+        .wrap .endTime{text-align:center;}
+        .wrap input{width:250px;height:30px;border:none;border-radius:5px;text-align:center;font-size:20px;color:#666;}
+        .wrap button{width:30px;height:30px;background:lawngreen;border:none;border-radius:50%;color:#666;}
+        #showTime{text-align:center;font-size:20px;line-height:100px;}
+        #showTime .num{color:lawngreen;font-size:25px;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <p>倒计时</p>
+        <div class="endTime">
+            <input type="text" id="etime" onclick="laydate({istime:true})">
+            <button onclick="run()">start</button>
+        </div>
+        <div id="showTime">
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function run(){
+        var ntime = new Date().getTime();
+        var etimeStr = document.getElementById('etime').value;
+        var etime = new Date(etimeStr).getTime();
+        t = etime - ntime;
+        if(t<0){
+            alert('请输入今天之后的日期')
+            return;
+        }
+        if(document.getElementById('etime').value==''){
+            alert('请输入日期');
+            return;
+        }
+        timer();
+        setInterval(timer,1000)
+    }
+    function timer(){
+        var ntime = new Date().getTime();
+        var etimeStr = document.getElementById('etime').value;
+        var etime = new Date(etimeStr).getTime();
+        t = etime - ntime;
+        var d = Math.floor(t/1000/60/60/24);
+        var h = Math.floor(t/1000/60/60%24);
+        var i = Math.floor(t/1000/60%60);
+        var s = Math.floor(t/1000%60);
+        var html='<span class="num">'+d+'</span><span class="info">天</span><span class="num">'+h+'</span><span class="info">时</span><span class="num">'+i+'</span><span class="info">分</span><span class="num">'+s+'</span><span class="info">秒</span>';
+        document.getElementById('showTime').innerHTML = html;
+
+    }
+
+</script>

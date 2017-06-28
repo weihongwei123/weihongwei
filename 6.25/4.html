@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/js/laydate/laydate.js"></script>
+    <style>
+        ul{list-style:none}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <input type="text" onclick="laydate()">
+        </li>
+        <li>
+            <input type="text" onclick="laydate({istime:false,format:'YYYY/MM/DD hh:mm:ss'})">
+        </li>
+        <li>
+            <input type="text" id="date">
+        </li>
+    </ul>
+</body>
+</html>
+<script>
+    laydate({
+        elem:'#date',
+        format:'YYYY/MM/DD',
+        festival:true,
+        event:'click',
+        max:'2017-7-31 23:59:59',
+        choose:function(dates){
+            alert('得到'+datas)
+        }
+    })
+    laydate.skin('dahong');
+</script>

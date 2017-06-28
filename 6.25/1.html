@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{padding:0;margin:0;}
+        .wrap{border:2px solid green;/*overflow:hidden;*/}
+        /*.wrap:after{display:block;clear:both;content:'';}*/
+        .clear{clear:both;}
+        .wrap .li{float:left;width:200px;height:200px;background:mediumpurple;margin:10px;}
+        /*
+            清楚浮动的3种方法
+            在父级添加overflow:hidden
+            添加个空div clear:both
+            在父级:after{display:block;clear:both;content:''}
+        */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="li"></div>
+        <div class="li"></div>
+        <div class="li"></div>
+        <div class="li"></div>
+        <div class="li"></div>
+        <div class="li"></div>
+        <div class="li"></div>
+        <div class="li"></div>
+        <div class="li"></div>
+        <div class="li"></div>
+        <div class="clear"></div>
+    </div>
+hheheh
+</body>
+</html>

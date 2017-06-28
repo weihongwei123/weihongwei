@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/js/laydate/laydate.js"></script>
+    <style>
+        ul{list-style: none;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <input type="text" onclick="laydate()">
+        </li>
+        <li>
+            <input onclick="laydate({istime: false, format: 'YYYY/MM/DD'})">
+        </li>
+        <li>
+            <input type="text" id="date">
+        </li>
+    </ul>
+</body>
+</html>
+<script>
+    laydate({
+        elem: '#date',
+        format: 'YYYY/MM/DD', // 分隔符可以任意定义，该例子表示只显示年月
+        festival: true, //显示节日
+//        choose: function(datas){ //选择日期完毕的回调
+//            alert('得到：'+datas);
+//        },
+
+    });
+    laydate.skin('molv');
+</script>
