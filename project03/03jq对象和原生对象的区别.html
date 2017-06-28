@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../lib/jquery-1.11.1/jquery.min.js"></script>	
+</head>
+<body>
+	<ul>
+		<li>aaaaaaaaa</li>
+		<li>bbbbbbbbb</li>
+		<li>ccccccccc</li>
+		<li>ddddddddd</li>
+	</ul>	
+
+	<div id="test">iiii</div>
+	<script type="text/javascript">
+		
+		$('ul li').each(function(){
+			alert(this)   // js 原生对象
+			// this.style.color = 'red';
+			alert($(this))  // jquery 对象
+			// $(this).css('color','green');
+		});
+
+		// 
+		$('#test').css('color','red')
+
+		$('ul li').hover(function(){
+			// alert($(this));
+			// alert(this);
+
+			$(this).css('background','red');
+		},function(){
+			$(this).css('background','yellow');
+		});
+
+	</script>
+
+</body>
+</html>

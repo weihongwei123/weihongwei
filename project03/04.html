@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function test(){
+			this.name = 'jack';	
+			this.say = function(){
+				alert(this.name);   //  this  test 对象
+			}
+		}			
+		// new test().say();
+
+
+/*
+		var name = 'jack'	
+		function fun(){
+			alert(this);   //  window
+			// alert(this.name);
+		}
+		fun();*/
+
+	/*			
+		window.name = 'jack';
+		window.fun = function(){
+			this   //  window
+		}
+
+
+		(function(){
+			console.log(this);   //  => window
+		})();	
+
+		(function(){
+			console.log(this);   //  => window
+		}())
+
+
+		setInterval(function(){
+			console.log(this);   //  => window
+		},1000)
+
+
+		setTimeout(function(){
+			console.log(this);   //  => window
+		},1000)
+
+
+
+
+		function test1(){
+			function test2(){
+				console.log(this);  // => window
+			}
+			test2();
+		}
+
+		test1();
+
+	*/
+
+
+		function fun1(){
+			return function(){
+				console.log(this);  //window
+			}
+		}		
+		fun1()();  
+
+
+	</script>
+</body>
+</html>

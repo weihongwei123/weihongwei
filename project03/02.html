@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="node_modules/swiper/dist/css/swiper.min.css">
+	<script src="../lib/jquery-1.11.1/jquery.min.js"></script>
+	 <script src="node_modules/swiper/dist/js/swiper.jquery.min.js"></script>
+	 <style type="text/css">
+			 	
+		.swiper-container {
+		    width: 00px;
+		    height: 300px;
+		}  
+
+
+	 </style>
+</head>
+<body>
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide"><img src="images/1.jpg"></div>
+	        <div class="swiper-slide"><img src="images/2.jpg"></div>
+	        <div class="swiper-slide"><img src="images/3.jpg"></div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+	    
+	    <!-- 如果需要导航按钮 -->
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-button-next"></div>
+	    
+	    <!-- 如果需要滚动条 -->
+	    <!-- <div class="swiper-scrollbar"></div> -->
+	</div>
+
+	<hr>
+	<hr>
+
+	<div class="swiper-container goods-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide"><img src="images/1.jpg"></div>
+	        <div class="swiper-slide"><img src="images/2.jpg"></div>
+	        <div class="swiper-slide"><img src="images/3.jpg"></div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+	    
+	    <!-- 如果需要导航按钮 -->
+	    <div class="swiper-button-prev"></div>
+	    <div class="swiper-button-next"></div>
+	    
+	    <!-- 如果需要滚动条 -->
+	    <div class="swiper-scrollbar"></div>
+	</div>
+
+
+	<script type="text/javascript">
+		
+		  var mySwiper = new Swiper ('.swiper-container', {
+		  	autoplay: 3000,//可选选项，自动滑动
+		    // 如果需要前进后退按钮
+		    nextButton: '.swiper-button-next',
+		    prevButton: '.swiper-button-prev',
+		    initialSlide :2,
+		    hashnav:true,
+		    // direction : 'vertical',
+		    loop: true,
+		    // // 如果需要分页器
+		    pagination: '.swiper-pagination',
+		    paginationClickable :true,
+		    paginationElement : 'span',
+
+		    scrollbarHide:true,
+		    
+		    // 如果需要滚动条
+		    scrollbar: '.swiper-scrollbar',
+		  })        
+
+
+
+		  var mySwiper = new Swiper ('.goods-container', {
+		  	autoplay: 3000,//可选选项，自动滑动
+		    // 如果需要前进后退按钮
+		    nextButton: '.swiper-button-next',
+		    prevButton: '.swiper-button-prev',
+		    initialSlide :2,
+		    hashnav:true,
+		    direction : 'vertical',
+		    loop: true,
+		    // // 如果需要分页器
+		    pagination: '.swiper-pagination',
+		    paginationClickable :true,
+		    paginationElement : 'span',
+
+		    scrollbarHide:true,
+		    
+		    // 如果需要滚动条
+		    scrollbar: '.swiper-scrollbar',
+		  })  
+
+
+	</script>
+</body>
+</html>

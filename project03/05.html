@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../lib/jquery-1.11.1/jquery.min.js"></script>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		
+		 $.ajax({
+		   url: "http://localhost/H5_26/project03/02.php",
+		   dataType:'jsonp',
+		   jsonp: "callback",
+		   // jsonpCallback:"test"
+		   type:'get',
+		   // data:{},
+		   success: function(data){
+		   		alert(data.name);
+		   }
+		 });
+
+	</script>
+
+</body>
+</html>

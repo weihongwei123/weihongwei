@@ -1,0 +1,14 @@
+// 全局变量
+$color:red;
+
+div{
+	$color:green;
+	width: 400px;
+	height: 400px;
+	background: $color;
+}
+
+p{
+	color:$color;
+}
+

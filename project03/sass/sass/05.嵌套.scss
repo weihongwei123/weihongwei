@@ -1,0 +1,28 @@
+div{
+	width: 100px;
+	height: 200px;
+	ul{
+		list-style: none;
+		li{
+			a{color:red;}
+			// & 自己  li
+			&:hover{background:red;}	
+		}
+	}
+}
+
+// 属性嵌套
+h1{
+	border:{
+		width:1px;
+		style:solid;
+		color:red;
+	}
+
+	background:{
+		color: red;
+		image:url(haokan.jpg);
+		repeat:no-repeat;
+	}
+
+}

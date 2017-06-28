@@ -1,0 +1,14 @@
+// 混合
+@mixin a(){
+	width: 200px;		
+	height:200px;
+}
+
+div{
+	color:red;
+	@include a();
+}
+
+p{
+	@include a();
+}
