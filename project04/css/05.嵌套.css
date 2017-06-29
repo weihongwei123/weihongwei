@@ -1,0 +1,19 @@
+div {
+  width: 100px;
+  height: 200px; }
+  div ul {
+    list-style: none; }
+    div ul li a {
+      color: red; }
+    div ul li:hover {
+      background: red; }
+
+h1 {
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+  background-color: red;
+  background-image: url(haokan.jpg);
+  background-repeat: no-repeat; }
+
+/*# sourceMappingURL=05.%C7%B6%CC%D7.css.map */

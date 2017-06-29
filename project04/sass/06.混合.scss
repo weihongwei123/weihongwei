@@ -1,0 +1,25 @@
+// 混合
+@mixin a($w){
+	width: $w;		
+	height:200px;
+}
+
+div{
+	color:red;
+	@include a(200px);
+}
+
+p{
+	@include a(400px);
+}
+
+
+// 函数
+@function jswidth($w){
+	@return ($w+100px)*2;
+}
+
+.box{
+	width: jswidth(200px);
+}
+

@@ -1,0 +1,16 @@
+// 不会 被 编译到 css 中。
+%clear{
+	clear:both;
+}
+
+%ml10{
+	margin-left: 10px;
+}
+
+div{
+	@extend %clear;
+}
+
+p{
+	@extend %ml10;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+
+		ul{
+			list-style: none;
+			display: flex;		
+			flex-wrap:wrap;
+			width: 400px;	
+			height: 400px;
+			border:1px solid green;
+			margin-top: 10px;
+			background: #CCC;
+		}	
+
+		li{
+			width: 25%;
+			/*height: 100px;*/
+			background: yellow;
+		}	
+
+		ul:nth-child(1){
+			align-content: flex-start;
+		}
+		ul:nth-child(2){
+			align-content: flex-end;
+		}
+		ul:nth-child(3){
+			align-content: center;
+		}
+		ul:nth-child(4){
+			background: pink;
+			align-content: space-between;
+		}
+
+		ul:nth-child(4) li{
+			height: 100px;
+		}	
+
+		ul:nth-child(5){
+			align-content:space-around;
+		}
+
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>5</li>
+		<li>5</li>
+	</ul>	
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>3</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>	
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>3</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>	
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+		<li>11</li>
+		<li>12</li>
+	</ul>	
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>3</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>	
+</body>
+</html>

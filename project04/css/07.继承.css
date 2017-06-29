@@ -1,0 +1,14 @@
+.item, div, .box {
+  width: 300px;
+  height: 200px;
+  background: red;
+}
+
+div {
+  color: red;
+  font-size: 18px;
+}
+
+.box {
+  color: pink;
+}

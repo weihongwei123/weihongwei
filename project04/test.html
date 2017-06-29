@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.zz{
+			position: fixed;		
+			top:0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(0,0,0,0.2);
+			display: none;
+		}	
+
+	</style>	
+</head>
+<body>
+	<button>按钮</button>
+	<div class="zz"></div>
+	<script src="../lib/jquery-1.11.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		$('button').click(function(){
+
+
+			$('.zz').show();
+		})
+
+	</script>
+</body>
+</html>
