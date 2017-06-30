@@ -1,0 +1,12 @@
+$color:red;
+$color1:green;
+.style{
+  color:$color;
+  width:200px;
+  height:200px;
+  background:$color1;
+}
+div{
+  @extend .style;
+  margin-left: 30px;
+}

@@ -1,0 +1,20 @@
+$color:red;
+$purpleColor:purple;
+.style{
+  $color:yellow;
+  color:$color;
+  background:$purpleColor;
+}
+@mixin a($ml){
+  margin-left:$ml;
+}
+@function js($w){
+  @return $w+50px;
+}
+div{
+  @extend .style;
+  width:js(100px);
+  height:100px;
+  @include a(10px);
+}
+

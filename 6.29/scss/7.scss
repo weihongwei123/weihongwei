@@ -1,0 +1,12 @@
+%color{
+  color:red
+}
+  @function jiafa($w){
+    @return ($w+50px)*3;
+  }
+div{
+  @extend %color;
+  $color:red;
+  color:$color;
+  width:jiafa(100px);
+}

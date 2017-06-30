@@ -1,0 +1,15 @@
+@mixin a($color){
+  color:$color;
+}
+$fontSize:20px;
+div{
+  @include a(red);
+  font-size:$fontSize;
+}
+@function jifa($w){
+  @return ($w+100px)*3;
+}
+p{
+  font-size:$fontSize;
+  width:jifa(100px);
+}

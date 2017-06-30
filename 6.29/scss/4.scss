@@ -1,0 +1,12 @@
+@function j($w){
+  @return ($w/50)*2;
+}
+div{
+  width:j(500px);
+}
+@mixin a($fontSize){
+  font-size:$fontSize;
+}
+p{
+  @include a(18px)
+}

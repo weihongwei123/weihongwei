@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/js/jquery-1.11.3.js"></script>
+    <script src="../lib/js/artDialog/dialog.js"></script>
+</head>
+<body>
+    <button onclick="tan()">弹框</button>
+    <button onclick="mo()">模态</button>
+    <button onclick="tan1()">气泡弹框</button>
+</body>
+</html>
+<script>
+    function tan(){
+        var d = dialog({
+            title: '欢迎',
+            content: '欢迎使用 artDialog 对话框组件！'
+        });
+        d.show()
+    }
+    function mo(){
+        var d = dialog({
+            title: 'message',
+            content: '<input autofocus />'
+        });
+        d.showModal();
+    }
+    function tan1(){
+        var d = dialog({
+            content: 'Hello World!',
+            quickClose: true// 点击空白处快速关闭
+        });
+        d.show(document.getElementById('quickref-bubble'));
+
+    }
+</script>

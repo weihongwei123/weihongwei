@@ -1,0 +1,8 @@
+@mixin a($color){
+  border:1px solid $color;
+}
+p{
+  width:100px;
+  height:100px;
+  @include a(green);
+}

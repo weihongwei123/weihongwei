@@ -1,0 +1,10 @@
+.style, div {
+  color: yellow;
+  background: purple;
+}
+
+div {
+  width: 150px;
+  height: 100px;
+  margin-left: 10px;
+}

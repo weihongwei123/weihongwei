@@ -1,0 +1,7 @@
+@mixin a(){
+  width:100px;
+  height:100px;
+}
+div{
+  @include a();
+}

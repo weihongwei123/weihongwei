@@ -1,0 +1,44 @@
+*{margin:0;padding:0;list-style:none;text-decoration:none;}
+$fixDisplay:flex;
+$whiteColor:#fff;
+$mFont:20px;
+@mixin position($p){
+  position:$p;
+}
+.style{
+  width:100%;
+  height:50px;
+  background:#333;
+}
+ol,ul{
+  @include position(fixed);
+  @extend .style;
+  display:$fixDisplay;
+}
+ol{
+  top:0;
+  li:nth-child(1){
+    order:1;
+  }
+  li:nth-child(2){
+    order:4;
+  }
+  li:nth-child(3){
+    order:3;
+  }
+  li:nth-child(4){
+    order:2;
+  }
+}
+ul{
+  bottom:0;
+}
+ol li,ul li{
+  width:25%;
+  text-align:center;
+  line-height:50px;
+  a{
+    color:$whiteColor;
+    font-size:$mFont;
+  }
+}
